@@ -14,6 +14,8 @@
 		2639D7A423FA07AF000D22B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2639D7A323FA07AF000D22B3 /* Preview Assets.xcassets */; };
 		2639D7A723FA07AF000D22B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2639D7A523FA07AF000D22B3 /* LaunchScreen.storyboard */; };
 		2639D7B223FA07AF000D22B3 /* ImInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639D7B123FA07AF000D22B3 /* ImInTests.swift */; };
+		26814DAB23FE336F00005584 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26814DAA23FE336F00005584 /* User.swift */; };
+		26814DAC23FE336F00005584 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26814DAA23FE336F00005584 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 		2639D7AD23FA07AF000D22B3 /* ImInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2639D7B123FA07AF000D22B3 /* ImInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImInTests.swift; sourceTree = "<group>"; };
 		2639D7B323FA07AF000D22B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26814DAA23FE336F00005584 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		2639D79923FA07AD000D22B3 /* ImIn */ = {
 			isa = PBXGroup;
 			children = (
+				26814DA923FE334A00005584 /* Model */,
 				2639D79A23FA07AD000D22B3 /* AppDelegate.swift */,
 				2639D79C23FA07AD000D22B3 /* SceneDelegate.swift */,
 				2639D79E23FA07AD000D22B3 /* ContentView.swift */,
@@ -105,6 +109,14 @@
 				2639D7B323FA07AF000D22B3 /* Info.plist */,
 			);
 			path = ImInTests;
+			sourceTree = "<group>";
+		};
+		26814DA923FE334A00005584 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26814DAA23FE336F00005584 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26814DAB23FE336F00005584 /* User.swift in Sources */,
 				2639D79B23FA07AD000D22B3 /* AppDelegate.swift in Sources */,
 				2639D79D23FA07AD000D22B3 /* SceneDelegate.swift in Sources */,
 				2639D79F23FA07AD000D22B3 /* ContentView.swift in Sources */,
@@ -218,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26814DAC23FE336F00005584 /* User.swift in Sources */,
 				2639D7B223FA07AF000D22B3 /* ImInTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

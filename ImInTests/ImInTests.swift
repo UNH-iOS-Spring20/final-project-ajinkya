@@ -19,9 +19,14 @@ class ImInTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testUserInitializationSucceds () {
+        let user = User.init(email: "testemail@gmail.com", password: "pass123");
+        XCTAssertNotNil(user)
+    }
+    
+    func testUserInitializationFails () {
+        let user = User.init(email: "", password: "pass@123")
+        XCTAssertNil(user)
     }
 
     func testPerformanceExample() {
