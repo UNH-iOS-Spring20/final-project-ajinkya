@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		2639D7A423FA07AF000D22B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2639D7A323FA07AF000D22B3 /* Preview Assets.xcassets */; };
 		2639D7A723FA07AF000D22B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2639D7A523FA07AF000D22B3 /* LaunchScreen.storyboard */; };
 		2639D7B223FA07AF000D22B3 /* ImInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639D7B123FA07AF000D22B3 /* ImInTests.swift */; };
+		2674D11E241D7ABF00D7A930 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674D11D241D7ABF00D7A930 /* Event.swift */; };
+		2674D11F241D7ABF00D7A930 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674D11D241D7ABF00D7A930 /* Event.swift */; };
+		2674D123241D7D0B00D7A930 /* EventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674D122241D7D0B00D7A930 /* EventRequest.swift */; };
+		2674D124241D7D0B00D7A930 /* EventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2674D122241D7D0B00D7A930 /* EventRequest.swift */; };
+		267ACFF5241EAF40000B0D5F /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ACFF4241EAF40000B0D5F /* DebugView.swift */; };
+		267ACFF6241EAF40000B0D5F /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ACFF4241EAF40000B0D5F /* DebugView.swift */; };
 		26BBEEBE23FED00D00E7E86C /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BBEEBD23FED00D00E7E86C /* NewUser.swift */; };
 		26BBEEBF23FED00D00E7E86C /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BBEEBD23FED00D00E7E86C /* NewUser.swift */; };
 		26BBEEC423FED55800E7E86C /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BBEEC323FED55800E7E86C /* LoginUser.swift */; };
@@ -51,6 +57,9 @@
 		2639D7AD23FA07AF000D22B3 /* ImInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2639D7B123FA07AF000D22B3 /* ImInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImInTests.swift; sourceTree = "<group>"; };
 		2639D7B323FA07AF000D22B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2674D11D241D7ABF00D7A930 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		2674D122241D7D0B00D7A930 /* EventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRequest.swift; sourceTree = "<group>"; };
+		267ACFF4241EAF40000B0D5F /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		26BBEEBD23FED00D00E7E86C /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		26BBEEC323FED55800E7E86C /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		26BBEEC623FED72D00E7E86C /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
@@ -106,10 +115,11 @@
 		2639D79923FA07AD000D22B3 /* ImIn */ = {
 			isa = PBXGroup;
 			children = (
+				2674D121241D7CC100D7A930 /* View */,
+				2674D120241D7CB400D7A930 /* Controller */,
 				26814DA923FE334A00005584 /* Model */,
 				2639D79A23FA07AD000D22B3 /* AppDelegate.swift */,
 				2639D79C23FA07AD000D22B3 /* SceneDelegate.swift */,
-				2639D79E23FA07AD000D22B3 /* ContentView.swift */,
 				2639D7A023FA07AF000D22B3 /* Assets.xcassets */,
 				2639D7A523FA07AF000D22B3 /* LaunchScreen.storyboard */,
 				2639D7A823FA07AF000D22B3 /* Info.plist */,
@@ -136,6 +146,23 @@
 			path = ImInTests;
 			sourceTree = "<group>";
 		};
+		2674D120241D7CB400D7A930 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2674D122241D7D0B00D7A930 /* EventRequest.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2674D121241D7CC100D7A930 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2639D79E23FA07AD000D22B3 /* ContentView.swift */,
+				267ACFF4241EAF40000B0D5F /* DebugView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		26814DA923FE334A00005584 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +170,7 @@
 				26BBEEC323FED55800E7E86C /* LoginUser.swift */,
 				26BBEEC623FED72D00E7E86C /* EventItem.swift */,
 				26BBEEC923FEE8E000E7E86C /* EventsCart.swift */,
+				2674D11D241D7ABF00D7A930 /* Event.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,7 +192,6 @@
 				580250EA3B7D2BCED7644F74 /* Pods-ImInTests.debug.xcconfig */,
 				F7D7A2D50D2F0B0E3F41727F /* Pods-ImInTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -180,6 +207,7 @@
 				2639D79423FA07AD000D22B3 /* Frameworks */,
 				2639D79523FA07AD000D22B3 /* Resources */,
 				E231BAB95A40BFD5894D4F32 /* [CP] Embed Pods Frameworks */,
+				77F0178FFC8A22214BFEAD1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,6 +342,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		77F0178FFC8A22214BFEAD1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImIn/Pods-ImIn-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImIn/Pods-ImIn-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImIn/Pods-ImIn-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E231BAB95A40BFD5894D4F32 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,10 +383,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2674D11E241D7ABF00D7A930 /* Event.swift in Sources */,
 				26BBEEBE23FED00D00E7E86C /* NewUser.swift in Sources */,
 				26BBEEC423FED55800E7E86C /* LoginUser.swift in Sources */,
 				2639D79B23FA07AD000D22B3 /* AppDelegate.swift in Sources */,
+				2674D123241D7D0B00D7A930 /* EventRequest.swift in Sources */,
 				2639D79D23FA07AD000D22B3 /* SceneDelegate.swift in Sources */,
+				267ACFF5241EAF40000B0D5F /* DebugView.swift in Sources */,
 				2639D79F23FA07AD000D22B3 /* ContentView.swift in Sources */,
 				26BBEECA23FEE8E000E7E86C /* EventsCart.swift in Sources */,
 				26BBEEC723FED72D00E7E86C /* EventItem.swift in Sources */,
@@ -355,7 +403,10 @@
 				26BBEEC523FED55800E7E86C /* LoginUser.swift in Sources */,
 				26BBEEBF23FED00D00E7E86C /* NewUser.swift in Sources */,
 				2639D7B223FA07AF000D22B3 /* ImInTests.swift in Sources */,
+				2674D124241D7D0B00D7A930 /* EventRequest.swift in Sources */,
+				267ACFF6241EAF40000B0D5F /* DebugView.swift in Sources */,
 				26BBEECB23FEE8E000E7E86C /* EventsCart.swift in Sources */,
+				2674D11F241D7ABF00D7A930 /* Event.swift in Sources */,
 				26BBEEC823FED72D00E7E86C /* EventItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
