@@ -18,13 +18,6 @@ struct DebugView: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-                getEvents()
-            }) {
-                Text("Call REST API")
-                    .font(.title)
-            }
-            .padding(8.0)
             
             HStack{
                 Button(action: {
@@ -63,19 +56,7 @@ struct DebugView: View {
         }
 }
 
-private func getEvents() {
-    let eventRequest = EventRequest()
-    eventRequest.getEvents { result in
-        switch result{
-        case .failure(let error):
-            print(error)
-        case .success(let events):
-            print(events)
-        }
- 
-    }
-    
-}
+
 
 private func createPizzerias() {
     let pizzeriasRef = db.collection("events")

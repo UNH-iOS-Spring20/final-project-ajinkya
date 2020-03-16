@@ -10,15 +10,22 @@ import SwiftUI
 import FirebaseFirestore
 
 
-//let db = Firestore.firestore()
-//var listOfEvents = [EventDetail]()
-
-struct ContentView: View {
+struct ContentView: View{
+    
+    @ObservedObject var locationManager = LocationManager()
     
     var body: some View {
+        
         VStack {
+            Text("Your location is:")
+            HStack {
+              Text("Latitude: \(locationManager.userLatitude)")
+              Text("Longitude: \(locationManager.userLongitude)")
+            }
+            .padding(8.0)
+            
             Button(action: {
-                self.getEvents()
+                self.getEvents(userLatitude: self.locationManager.userLatitude, userLongitude: self.locationManager.userLongitude)
             }) {
                 Text("Call REST API")
                     .font(.title)
@@ -29,14 +36,17 @@ struct ContentView: View {
         }
 
 
-private func getEvents() {
-    let eventRequest = EventRequest()
+    private func getEvents(userLatitude: Double, userLongitude: Double) {
+    let eventRequest = EventRequest(latitude: userLatitude, longitude: userLongitude)
     eventRequest.getEvents { result in
         switch result{
         case .failure(let error):
             print(error)
         case .success(let events):
-            print(events)
+            for event in events {
+                print(event.name)
+                print(event.vicinity)
+            }
         }
  
     }
@@ -44,7 +54,6 @@ private func getEvents() {
 }
 
 }
-
 
 
 struct ContentView_Previews: PreviewProvider {

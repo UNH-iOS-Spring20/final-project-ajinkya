@@ -18,9 +18,10 @@ struct EventRequest {
     //let API_KEY = "AIzaSyBCtGqCSz_kypE2fgfi-oxqJCu_UPI4wUg"
     let API_KEY = "AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
     
-    init() {
+    init(latitude: Double, longitude: Double) {
         
-        let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=\(API_KEY)"
+        let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(latitude),\(longitude)&radius=1500&type=restaurant&keyword=cruise&key=\(API_KEY)"
+        
         
         guard let resourceURL = URL(string: resourceString) else {fatalError()}
         
@@ -31,6 +32,8 @@ struct EventRequest {
     
     func getEvents (completion: @escaping (Result<[EventDetail], EventError>) -> Void){
        
+     
+        
         let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))

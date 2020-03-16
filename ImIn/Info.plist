@@ -61,5 +61,9 @@
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Application wants to use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Application wants to use your location</string>
 </dict>
 </plist>
