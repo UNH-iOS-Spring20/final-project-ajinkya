@@ -16,7 +16,7 @@ struct EventResponse: Decodable{
     var events: [EventDetail]
 }*/
 
-struct EventDetail: Decodable{
+struct EventDetail: Decodable, Hashable{
     var name: String
     var vicinity: String
     //var rating: Int
