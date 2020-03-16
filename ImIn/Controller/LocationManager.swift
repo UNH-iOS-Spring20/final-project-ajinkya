@@ -14,6 +14,7 @@ class LocationManager: NSObject, ObservableObject{
   
   @Published var userLatitude: Double = 0
   @Published var userLongitude: Double = 0
+  @Published var eventsList = [EventDetail]()
   
   private let locationManager = CLLocationManager()
   
@@ -32,6 +33,29 @@ extension LocationManager: CLLocationManagerDelegate {
     guard let location = locations.last else { return }
     userLatitude = location.coordinate.latitude
     userLongitude = location.coordinate.longitude
-    print(location)
+    
+    let API_KEY = "AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
+    
+      let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(userLatitude),\(userLongitude)&radius=1500&type=restaurant&keyword=cruise&key=\(API_KEY)"
+      
+      
+      guard let resourceURL = URL(string: resourceString) else {fatalError()}
+      
+      print(resourceURL)
+      
+      URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
+          guard let data = data else {return}
+          do{
+          let decoder = JSONDecoder()
+          let eventResponse = try decoder.decode(EventResponse.self, from: data)
+
+          DispatchQueue.main.async {
+            self.eventsList = eventResponse.results
+          }
+          }catch {
+              print("Error")
+          }
+      }.resume()
+    
   }
 }

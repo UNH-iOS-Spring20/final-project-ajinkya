@@ -12,7 +12,21 @@ struct EventDetailView: View {
     var eventItem: EventDetail
     
     var body: some View {
-        Text(eventItem.name)
+      
+        VStack(alignment: .leading) {
+            Text(eventItem.name)
+                .font(.title)
+
+            HStack(alignment: .top) {
+                Text(eventItem.name)
+                    .font(.subheadline)
+                Spacer()
+                Text(eventItem.name)
+                    .font(.subheadline)
+            }
+        }
+        .padding()
+        
     }
 }
 
