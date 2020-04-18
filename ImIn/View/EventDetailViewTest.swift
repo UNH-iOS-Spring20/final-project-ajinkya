@@ -1,15 +1,15 @@
 //
-//  EventDetailView.swift
+//  EventDetailViewTest.swift
 //  ImIn
 //
-//  Created by Ajinkya Wani on 3/16/20.
+//  Created by Ajinkya Wani on 4/18/20.
 //  Copyright © 2020 Ajinkya Wani. All rights reserved.
 //
 
 import SwiftUI
 
-struct EventDetailView: View {
-    var eventItem: EventDetail
+struct EventDetailViewTest: View {
+   var eventItem: EventTest
     
     var body: some View {
       
@@ -30,8 +30,8 @@ struct EventDetailView: View {
     }
 }
 
-struct EventDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        EventDetailView(eventItem: listOfEvents[0])
-    }
-}
+//struct EventDetailViewTest_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EventDetailViewTest()
+//    }
+//}

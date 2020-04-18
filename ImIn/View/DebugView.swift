@@ -63,20 +63,17 @@ private func createPizzerias() {
     
     pizzeriasRef.document("Cruise Bar").setData([
         "name": "Cruise Bar",
-        "address": "New Haven",
-        "event type": "Party"
+        "vicinity": "New Haven"
     ])
     
     pizzeriasRef.document("Harbour Cruises").setData([
         "name": "New Haven Harbour Cruises",
-        "address": "New Haven",
-        "event type": "Party"
+        "vicinity": "New Haven"
     ])
     
     pizzeriasRef.document("Embrace Nature").setData([
         "name": "Embrace Nature",
-        "address": "Sydney",
-        "event type": "Trekking"
+        "vicinity": "Sydney"
     ])
     
 }
@@ -86,14 +83,12 @@ private func updatePizzerias() {
     
      pizzeriasRef.document("Harbour Cruises").setData([
           "name": "West Haven Harbour Cruises",
-          "address": "West Haven",
-          "event type": "Party"
+          "vicinity": "West Haven"
       ])
       
       pizzeriasRef.document("Embrace Nature").setData([
           "name": "Embrace Nature",
-          "address": "East Haven",
-          "event type": "Trekking"
+          "vicinity": "East Haven"
       ])
 }
 
@@ -110,6 +105,7 @@ private func getCollection(collection: String) {
 }
 
 private func deleteCollection(collection: String) {
+    print("Delete Event Called")
     db.collection(collection).getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")

@@ -17,13 +17,13 @@ struct ContentView: View{
     var body: some View {
             
         NavigationView {
-            
+
             List(locationManager.eventsList, id: \.self) { event in
                        NavigationLink(destination: EventDetailView(eventItem: event)) {
                            EventRow(eventItem: event)
                        }
                 }
-                   .navigationBarTitle(Text("Events"))
+                   .navigationBarTitle(Text("Nearby Events"))
                }
         }
 

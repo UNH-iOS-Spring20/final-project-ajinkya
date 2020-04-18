@@ -24,6 +24,33 @@ class LocationManager: NSObject, ObservableObject{
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
     self.locationManager.requestWhenInUseAuthorization()
     self.locationManager.startUpdatingLocation()
+    print("Inside LocationManager constructor")
+    let API_KEY = "AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
+    
+      let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(userLatitude),\(userLongitude)&radius=1500&type=restaurant&keyword=cruise&key=\(API_KEY)"
+    
+    let resourceString1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
+      
+      
+      guard let resourceURL = URL(string: resourceString1) else {fatalError()}
+      
+      print(resourceURL)
+      
+      URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
+          guard let data = data else {return}
+          do{
+          let decoder = JSONDecoder()
+          let eventResponse = try decoder.decode(EventResponse.self, from: data)
+
+          DispatchQueue.main.async {
+            self.eventsList = eventResponse.results
+          }
+          }catch {
+              print("Error")
+          }
+      }.resume()
+
+    
   }
 }
 
@@ -37,6 +64,8 @@ extension LocationManager: CLLocationManagerDelegate {
     let API_KEY = "AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
     
       let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(userLatitude),\(userLongitude)&radius=1500&type=restaurant&keyword=cruise&key=\(API_KEY)"
+    
+    let resourceString1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
       
       
       guard let resourceURL = URL(string: resourceString) else {fatalError()}
