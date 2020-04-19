@@ -1,27 +1,27 @@
 //
-//  EventDetailViewTest.swift
+//  LookupEventDetailView.swift
 //  ImIn
 //
-//  Created by Ajinkya Wani on 4/18/20.
+//  Created by Ajinkya Wani on 4/19/20.
 //  Copyright © 2020 Ajinkya Wani. All rights reserved.
 //
 
 import SwiftUI
 
-struct EventDetailViewTest: View {
-   var eventItem: EventTest
+struct LookupEventDetailView: View {
+    var lookupEvent: LookupEvent
     
     var body: some View {
       
         VStack(alignment: .leading) {
-            Text(eventItem.name)
+            Text(lookupEvent.name)
                 .font(.title)
 
             HStack(alignment: .top) {
-                Text(eventItem.id)
+                Text(lookupEvent.id)
                     .font(.subheadline)
                 Spacer()
-                Text(eventItem.vicinity)
+                Text(lookupEvent.vicinity)
                     .font(.subheadline)
             }
         }
@@ -30,10 +30,10 @@ struct EventDetailViewTest: View {
     }
 }
 
-struct EventDetailViewTest_Previews: PreviewProvider {
+struct LookupEventDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailViewTest(eventItem:
-            EventTest(id: "1", data: ["name": "TestName",
+        LookupEventDetailView(lookupEvent:
+            LookupEvent(id: "1", data: ["name": "TestName",
                                       "vicinity": "TestVicinity"])!
         )
     }

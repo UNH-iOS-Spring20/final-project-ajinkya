@@ -12,27 +12,27 @@ import FirebaseFirestore
 let eventsCollectionRef = Firestore.firestore().collection("events")
 
 struct LookupEventsView: View {
-    @ObservedObject private var events = FirebaseCollection<EventTest>(collectionRef: eventsCollectionRef)
+    @ObservedObject private var lookupEvents = FirebaseCollection<LookupEvent>(collectionRef: eventsCollectionRef)
     
     var body: some View {
         VStack {
             List {
-                ForEach(events.items) { event in
-                    NavigationLink(destination: EventDetailViewTest(eventItem: event)) {
-                        EventRowTest(eventItem: event)
+                ForEach(lookupEvents.items) { lookupEvent in
+                    NavigationLink(destination: LookupEventDetailView(lookupEvent: lookupEvent)) {
+                        LookupEventRowView(lookupEvent: lookupEvent)
                     }
                     // Text(event.name)
                 }.onDelete(perform: deletePizzeria)
             }
         }
-        .navigationBarTitle(Text("Events"))
+        .navigationBarTitle(Text("Lookup Events"))
         .navigationBarItems(leading: EditButton())
     }
     
     func deletePizzeria(at offsets: IndexSet) {
         let index = offsets.first!
-        print("Deleting events: \(events.items[index])")
-        let id = events.items[index].id
+        print("Deleting lookup events: \(lookupEvents.items[index])")
+        let id = lookupEvents.items[index].id
         eventsCollectionRef.document(id).delete() { error in
             if let error = error {
                 print("Error removing document: \(error)")

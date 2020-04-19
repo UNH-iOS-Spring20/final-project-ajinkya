@@ -10,9 +10,10 @@
 		26284BE5240040AF002F36D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26284BE4240040AF002F36D9 /* GoogleService-Info.plist */; };
 		26284BE6240040AF002F36D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26284BE4240040AF002F36D9 /* GoogleService-Info.plist */; };
 		26379982244B940500FDDFB5 /* FirebaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379981244B940500FDDFB5 /* FirebaseCollection.swift */; };
-		26379986244BC28500FDDFB5 /* EventRowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379985244BC28500FDDFB5 /* EventRowTest.swift */; };
-		26379988244BC47800FDDFB5 /* EventDetailViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379987244BC47800FDDFB5 /* EventDetailViewTest.swift */; };
 		2637998A244CF42500FDDFB5 /* LookupEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379989244CF42500FDDFB5 /* LookupEventsView.swift */; };
+		2637998C244D03C600FDDFB5 /* LookupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637998B244D03C600FDDFB5 /* LookupEvent.swift */; };
+		2637998E244D05D300FDDFB5 /* LookupEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637998D244D05D300FDDFB5 /* LookupEventDetailView.swift */; };
+		26379990244D06AF00FDDFB5 /* LookupEventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637998F244D06AF00FDDFB5 /* LookupEventRowView.swift */; };
 		2639D79B23FA07AD000D22B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639D79A23FA07AD000D22B3 /* AppDelegate.swift */; };
 		2639D79D23FA07AD000D22B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639D79C23FA07AD000D22B3 /* SceneDelegate.swift */; };
 		2639D79F23FA07AD000D22B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2639D79E23FA07AD000D22B3 /* ContentView.swift */; };
@@ -55,9 +56,10 @@
 /* Begin PBXFileReference section */
 		26284BE4240040AF002F36D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26379981244B940500FDDFB5 /* FirebaseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollection.swift; sourceTree = "<group>"; };
-		26379985244BC28500FDDFB5 /* EventRowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowTest.swift; sourceTree = "<group>"; };
-		26379987244BC47800FDDFB5 /* EventDetailViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewTest.swift; sourceTree = "<group>"; };
 		26379989244CF42500FDDFB5 /* LookupEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEventsView.swift; sourceTree = "<group>"; };
+		2637998B244D03C600FDDFB5 /* LookupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEvent.swift; sourceTree = "<group>"; };
+		2637998D244D05D300FDDFB5 /* LookupEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEventDetailView.swift; sourceTree = "<group>"; };
+		2637998F244D06AF00FDDFB5 /* LookupEventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEventRowView.swift; sourceTree = "<group>"; };
 		2639D79723FA07AD000D22B3 /* ImIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2639D79A23FA07AD000D22B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2639D79C23FA07AD000D22B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,9 +180,9 @@
 				26AB0A36241FE29200B17A19 /* EventDetailView.swift */,
 				26AB0A38241FE54800B17A19 /* EventRow.swift */,
 				26379981244B940500FDDFB5 /* FirebaseCollection.swift */,
-				26379985244BC28500FDDFB5 /* EventRowTest.swift */,
-				26379987244BC47800FDDFB5 /* EventDetailViewTest.swift */,
 				26379989244CF42500FDDFB5 /* LookupEventsView.swift */,
+				2637998D244D05D300FDDFB5 /* LookupEventDetailView.swift */,
+				2637998F244D06AF00FDDFB5 /* LookupEventRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +195,7 @@
 				26BBEEC623FED72D00E7E86C /* EventItem.swift */,
 				26BBEEC923FEE8E000E7E86C /* EventsCart.swift */,
 				2674D11D241D7ABF00D7A930 /* Event.swift */,
+				2637998B244D03C600FDDFB5 /* LookupEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,22 +408,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26379990244D06AF00FDDFB5 /* LookupEventRowView.swift in Sources */,
 				2674D11E241D7ABF00D7A930 /* Event.swift in Sources */,
 				26BBEEBE23FED00D00E7E86C /* NewUser.swift in Sources */,
 				26379982244B940500FDDFB5 /* FirebaseCollection.swift in Sources */,
 				26AB0A39241FE54800B17A19 /* EventRow.swift in Sources */,
 				26BBEEC423FED55800E7E86C /* LoginUser.swift in Sources */,
 				267ACFF8241F3A7F000B0D5F /* LocationManager.swift in Sources */,
-				26379988244BC47800FDDFB5 /* EventDetailViewTest.swift in Sources */,
-				26379986244BC28500FDDFB5 /* EventRowTest.swift in Sources */,
 				2639D79B23FA07AD000D22B3 /* AppDelegate.swift in Sources */,
 				2674D123241D7D0B00D7A930 /* EventRequest.swift in Sources */,
 				2637998A244CF42500FDDFB5 /* LookupEventsView.swift in Sources */,
 				2639D79D23FA07AD000D22B3 /* SceneDelegate.swift in Sources */,
+				2637998C244D03C600FDDFB5 /* LookupEvent.swift in Sources */,
 				267ACFF5241EAF40000B0D5F /* DebugView.swift in Sources */,
 				26AB0A37241FE29200B17A19 /* EventDetailView.swift in Sources */,
 				2639D79F23FA07AD000D22B3 /* ContentView.swift in Sources */,
 				26BBEECA23FEE8E000E7E86C /* EventsCart.swift in Sources */,
+				2637998E244D05D300FDDFB5 /* LookupEventDetailView.swift in Sources */,
 				26BBEEC723FED72D00E7E86C /* EventItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
