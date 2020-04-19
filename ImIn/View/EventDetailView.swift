@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct EventDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
     var eventItem: EventDetail
     
     var body: some View {
@@ -24,9 +25,26 @@ struct EventDetailView: View {
                 Text(eventItem.vicinity)
                     .font(.subheadline)
             }
+            Button(action: addEvent){
+                Text("Add Event")
+            }
+            .padding()
         }
         .padding()
         
+    }
+    
+    func addEvent() {
+        print("Adding Event")
+       // if !eventItem.name.isEmpty && !eventItem.vicinity {
+            let data = ["name": eventItem.name, "vicinity": eventItem.vicinity]
+            eventsCollectionRef.addDocument(data: data)
+            dismiss()
+       // }
+    }
+    
+    func dismiss() {
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

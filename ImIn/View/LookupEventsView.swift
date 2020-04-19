@@ -9,7 +9,7 @@
 import SwiftUI
 import FirebaseFirestore
 
-let eventsCollectionRef = Firestore.firestore().collection("events")
+let eventsCollectionRef = Firestore.firestore().collection("events2")
 
 struct LookupEventsView: View {
     @ObservedObject private var lookupEvents = FirebaseCollection<LookupEvent>(collectionRef: eventsCollectionRef)
@@ -22,16 +22,16 @@ struct LookupEventsView: View {
                         LookupEventRowView(lookupEvent: lookupEvent)
                     }
                     // Text(event.name)
-                }.onDelete(perform: deletePizzeria)
+                }.onDelete(perform: deleteEvent)
             }
         }
         .navigationBarTitle(Text("Lookup Events"))
         .navigationBarItems(leading: EditButton())
     }
     
-    func deletePizzeria(at offsets: IndexSet) {
+    func deleteEvent(at offsets: IndexSet) {
         let index = offsets.first!
-        print("Deleting lookup events: \(lookupEvents.items[index])")
+        print("Deleting lookup event: \(lookupEvents.items[index])")
         let id = lookupEvents.items[index].id
         eventsCollectionRef.document(id).delete() { error in
             if let error = error {
