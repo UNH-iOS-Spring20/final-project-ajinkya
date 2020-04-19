@@ -30,8 +30,11 @@ struct EventDetailViewTest: View {
     }
 }
 
-//struct EventDetailViewTest_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EventDetailViewTest()
-//    }
-//}
+struct EventDetailViewTest_Previews: PreviewProvider {
+    static var previews: some View {
+        EventDetailViewTest(eventItem:
+            EventTest(id: "1", data: ["name": "TestName",
+                                      "vicinity": "TestVicinity"])!
+        )
+    }
+}

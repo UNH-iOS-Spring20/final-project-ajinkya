@@ -15,18 +15,24 @@ struct ContentView: View{
     @ObservedObject var locationManager = LocationManager()
     
     var body: some View {
-            
+        
         NavigationView {
-
-            List(locationManager.eventsList, id: \.self) { event in
-                       NavigationLink(destination: EventDetailView(eventItem: event)) {
-                           EventRow(eventItem: event)
-                       }
+            VStack {
+                NavigationLink(destination: LookupEventsView()) {
+                    Text("Events Lookup")
                 }
-                   .navigationBarTitle(Text("Nearby Events"))
-               }
+                
+                
+                List(locationManager.eventsList, id: \.self) { event in
+                    NavigationLink(destination: EventDetailView(eventItem: event)) {
+                        EventRow(eventItem: event)
+                    }
+                }
+            }
+            .navigationBarTitle(Text("Nearby Events"))
         }
-
+    }
+    
 }
 
 
