@@ -12,7 +12,10 @@ struct EventRow: View {
     var eventItem: EventDetail
     
     var body: some View {
-        Text(eventItem.name)
+        HStack{
+            URLImageView(urlString: eventItem.icon)
+            Text(eventItem.name)
+        }
     }
 }
 

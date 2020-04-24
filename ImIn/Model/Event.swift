@@ -22,6 +22,7 @@ struct EventDetail: Decodable, Hashable{
     var vicinity: String
     //var rating: Int
     var id: String
+    var icon: String
     //var opening_hours: OpeningHours
 }
 

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		26284BE5240040AF002F36D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26284BE4240040AF002F36D9 /* GoogleService-Info.plist */; };
 		26284BE6240040AF002F36D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26284BE4240040AF002F36D9 /* GoogleService-Info.plist */; };
+		262A7E8724529C98004375C5 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A7E8624529C98004375C5 /* URLImageView.swift */; };
+		262A7E8C24529F83004375C5 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A7E8B24529F83004375C5 /* URLImage.swift */; };
+		262A7E8E2452A550004375C5 /* PlaceIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 262A7E8D2452A550004375C5 /* PlaceIcon.png */; };
 		26379982244B940500FDDFB5 /* FirebaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379981244B940500FDDFB5 /* FirebaseCollection.swift */; };
 		2637998A244CF42500FDDFB5 /* LookupEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379989244CF42500FDDFB5 /* LookupEventsView.swift */; };
 		2637998C244D03C600FDDFB5 /* LookupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637998B244D03C600FDDFB5 /* LookupEvent.swift */; };
@@ -55,6 +58,9 @@
 
 /* Begin PBXFileReference section */
 		26284BE4240040AF002F36D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		262A7E8624529C98004375C5 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		262A7E8B24529F83004375C5 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		262A7E8D2452A550004375C5 /* PlaceIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PlaceIcon.png; path = ../../../../../../../Desktop/PlaceIcon.png; sourceTree = "<group>"; };
 		26379981244B940500FDDFB5 /* FirebaseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollection.swift; sourceTree = "<group>"; };
 		26379989244CF42500FDDFB5 /* LookupEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEventsView.swift; sourceTree = "<group>"; };
 		2637998B244D03C600FDDFB5 /* LookupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEvent.swift; sourceTree = "<group>"; };
@@ -109,6 +115,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262A7E8824529DBD004375C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				262A7E8D2452A550004375C5 /* PlaceIcon.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2639D78E23FA07AD000D22B3 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +146,7 @@
 		2639D79923FA07AD000D22B3 /* ImIn */ = {
 			isa = PBXGroup;
 			children = (
+				262A7E8824529DBD004375C5 /* Resources */,
 				2674D121241D7CC100D7A930 /* View */,
 				2674D120241D7CB400D7A930 /* Controller */,
 				26814DA923FE334A00005584 /* Model */,
@@ -183,6 +198,7 @@
 				26379989244CF42500FDDFB5 /* LookupEventsView.swift */,
 				2637998D244D05D300FDDFB5 /* LookupEventDetailView.swift */,
 				2637998F244D06AF00FDDFB5 /* LookupEventRowView.swift */,
+				262A7E8624529C98004375C5 /* URLImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +212,7 @@
 				26BBEEC923FEE8E000E7E86C /* EventsCart.swift */,
 				2674D11D241D7ABF00D7A930 /* Event.swift */,
 				2637998B244D03C600FDDFB5 /* LookupEvent.swift */,
+				262A7E8B24529F83004375C5 /* URLImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262A7E8E2452A550004375C5 /* PlaceIcon.png in Resources */,
 				2639D7A723FA07AF000D22B3 /* LaunchScreen.storyboard in Resources */,
 				26284BE5240040AF002F36D9 /* GoogleService-Info.plist in Resources */,
 				2639D7A423FA07AF000D22B3 /* Preview Assets.xcassets in Resources */,
@@ -411,6 +429,7 @@
 				26379990244D06AF00FDDFB5 /* LookupEventRowView.swift in Sources */,
 				2674D11E241D7ABF00D7A930 /* Event.swift in Sources */,
 				26BBEEBE23FED00D00E7E86C /* NewUser.swift in Sources */,
+				262A7E8C24529F83004375C5 /* URLImage.swift in Sources */,
 				26379982244B940500FDDFB5 /* FirebaseCollection.swift in Sources */,
 				26AB0A39241FE54800B17A19 /* EventRow.swift in Sources */,
 				26BBEEC423FED55800E7E86C /* LoginUser.swift in Sources */,
@@ -426,6 +445,7 @@
 				26BBEECA23FEE8E000E7E86C /* EventsCart.swift in Sources */,
 				2637998E244D05D300FDDFB5 /* LookupEventDetailView.swift in Sources */,
 				26BBEEC723FED72D00E7E86C /* EventItem.swift in Sources */,
+				262A7E8724529C98004375C5 /* URLImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
