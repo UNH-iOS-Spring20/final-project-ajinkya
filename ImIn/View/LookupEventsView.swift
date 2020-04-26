@@ -9,7 +9,7 @@
 import SwiftUI
 import FirebaseFirestore
 
-let eventsCollectionRef = Firestore.firestore().collection("events2")
+let eventsCollectionRef = Firestore.firestore().collection("events")
 
 struct LookupEventsView: View {
     @ObservedObject private var lookupEvents = FirebaseCollection<LookupEvent>(collectionRef: eventsCollectionRef)

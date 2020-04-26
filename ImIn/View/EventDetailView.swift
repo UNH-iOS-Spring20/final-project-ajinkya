@@ -9,19 +9,20 @@
 import SwiftUI
 
 struct EventDetailView: View {
+    @ObservedObject private var lookupEvents = FirebaseCollection<LookupEvent>(collectionRef: eventsCollectionRef)
     @Environment(\.presentationMode) var presentationMode
+    @State private var showingEventPresentAlert = false
+    
+    
     var eventItem: EventDetail
     
     var body: some View {
-      
+        
         VStack(alignment: .leading) {
             Text(eventItem.name)
                 .font(.title)
-
+            
             HStack(alignment: .top) {
-                Text(eventItem.id)
-                    .font(.subheadline)
-                Spacer()
                 Text(eventItem.vicinity)
                     .font(.subheadline)
             }
@@ -31,16 +32,31 @@ struct EventDetailView: View {
             .padding()
         }
         .padding()
+        .navigationBarTitle(Text("Event Details"), displayMode: .inline)
+        .alert(isPresented: $showingEventPresentAlert) {
+            Alert(title: Text("Event Already Present"), message: Text("This event is already present in your lookup, thank you!"), dismissButton: .default(Text("OK")) {
+                self.dismiss()
+                })
+        }
         
     }
     
     func addEvent() {
+        var isPresent: Bool
+        isPresent = false
         print("Adding Event")
-       // if !eventItem.name.isEmpty && !eventItem.vicinity {
-            let data = ["name": eventItem.name, "vicinity": eventItem.vicinity]
+        for item in lookupEvents.items {
+            if item.name == eventItem.name {
+                isPresent = true
+                self.showingEventPresentAlert.toggle()
+            }
+            
+        }
+        if isPresent == false {
+            let data = ["name": eventItem.name, "vicinity": eventItem.vicinity, "icon": eventItem.icon]
             eventsCollectionRef.addDocument(data: data)
             dismiss()
-       // }
+        }
     }
     
     func dismiss() {
