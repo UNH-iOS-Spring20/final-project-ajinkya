@@ -15,18 +15,20 @@ struct LookupEventsView: View {
     @ObservedObject private var lookupEvents = FirebaseCollection<LookupEvent>(collectionRef: eventsCollectionRef)
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(lookupEvents.items) { lookupEvent in
-                    NavigationLink(destination: LookupEventDetailView(lookupEvent: lookupEvent)) {
-                        LookupEventRowView(lookupEvent: lookupEvent)
-                    }
-                    // Text(event.name)
-                }.onDelete(perform: deleteEvent)
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(lookupEvents.items) { lookupEvent in
+                        NavigationLink(destination: LookupEventDetailView(lookupEvent: lookupEvent)) {
+                            LookupEventRowView(lookupEvent: lookupEvent)
+                        }
+                        // Text(event.name)
+                    }.onDelete(perform: deleteEvent)
+                }
             }
+            .navigationBarTitle(Text("Lookup Events"))
+            .navigationBarItems(leading: EditButton())
         }
-        .navigationBarTitle(Text("Lookup Events"))
-        .navigationBarItems(leading: EditButton())
     }
     
     func deleteEvent(at offsets: IndexSet) {

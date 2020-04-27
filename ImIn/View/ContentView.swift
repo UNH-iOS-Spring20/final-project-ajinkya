@@ -18,9 +18,6 @@ struct ContentView: View{
         
         NavigationView {
             VStack {
-                NavigationLink(destination: LookupEventsView()) {
-                    Text("Events Lookup")
-                }
                 List(locationManager.eventsList, id: \.self) { event in
                     NavigationLink(destination: EventDetailView(eventItem: event)) {
                         EventRow(eventItem: event)
