@@ -15,36 +15,45 @@ struct UserProfileView: View {
     @ObservedObject private var user = FirebaseCollection<User>(collectionRef: usersCollectionRef)
     
     var body: some View {
-        Group {
-            VStack(spacing: 20) {
-                HStack {
-                    Text("First Name:")
-                    Text(user.items[0].firstName)
+        NavigationView{
+            Group {
+                VStack(spacing: 20) {
+                    HStack {
+                        Text("First Name:")
+                        Text(user.items[0].firstName)
+                    }
+                    HStack{
+                        Text("Last Name:")
+                        Text(user.items[0].lastName)
+                    }
+                    HStack{
+                        Text("Address:")
+                        Text(user.items[0].address)
+                    }
+                    HStack{
+                        Text("City:")
+                        Text(user.items[0].city)
+                    }
+                    HStack{
+                        Text("State:")
+                        Text(user.items[0].state)
+                    }
+                    HStack{
+                        Text("Country:")
+                        Text(user.items[0].country)
+                    }
+                    HStack{
+                        NavigationLink(destination: EditUserProfileView(user: user.items[0])){
+                            Text("Edit")
+                        }
+                        
+                    }
                 }
-                HStack{
-                    Text("Last Name:")
-                    Text(user.items[0].lastName)
-                }
-                HStack{
-                    Text("Address:")
-                    Text(user.items[0].address)
-                }
-                HStack{
-                    Text("City:")
-                    Text(user.items[0].city)
-                }
-                HStack{
-                    Text("State:")
-                    Text(user.items[0].state)
-                }
-                HStack{
-                    Text("Country:")
-                    Text(user.items[0].country)
-                }
+                .navigationBarTitle("User Profile")
             }
-            .navigationBarTitle(Text("User Profile"), displayMode: .inline)
+            .padding()
         }
-        .padding()
+        
     }
 }
 
