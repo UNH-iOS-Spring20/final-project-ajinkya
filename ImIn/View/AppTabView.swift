@@ -20,7 +20,7 @@ struct AppTabView: View {
             LookupEventsView()
                 .tabItem {
                     // Image(systemName: "cart").font(.title)
-                    Text("Im'IN Events")
+                    Text("Going")
             }
             
             UserProfileView()

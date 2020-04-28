@@ -15,10 +15,19 @@ struct EventDetailView: View {
     
     
     var eventItem: EventDetail
+    let photo = String(Int.random(in: 1 ..< 4))
     
     var body: some View {
         
         VStack(alignment: .leading) {
+            
+            Image("Event\(photo)")
+                .resizable()
+                .frame(width: 150, height: 150)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                .shadow(radius: 10)
+            
             Text(eventItem.name)
                 .font(.title)
             
@@ -53,7 +62,8 @@ struct EventDetailView: View {
             
         }
         if isPresent == false {
-            let data = ["name": eventItem.name, "vicinity": eventItem.vicinity, "icon": eventItem.icon]
+            let data = ["name": eventItem.name, "vicinity": eventItem.vicinity, "icon": eventItem.icon,
+                        "photo": photo]
             eventsCollectionRef.addDocument(data: data)
             dismiss()
         }

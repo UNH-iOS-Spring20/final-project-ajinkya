@@ -15,6 +15,7 @@ class LookupEvent: FirebaseCodable {
     @Published var name: String
     @Published var vicinity: String
     @Published var icon: String
+    @Published var photo: String
     
     var data: [String: Any] {
         return [
@@ -26,7 +27,8 @@ class LookupEvent: FirebaseCodable {
     required init?(id: String, data: [String : Any]) {
         guard let name = data["name"] as? String,
             let vicinity = data["vicinity"] as? String,
-            let icon = data["icon"] as? String
+            let icon = data["icon"] as? String,
+            let photo = data["photo"] as? String
             else {
                 return nil
         }
@@ -35,6 +37,7 @@ class LookupEvent: FirebaseCodable {
         self.name = name
         self.vicinity = vicinity
         self.icon = icon
+        self.photo = photo
     }
 }
 
