@@ -12,21 +12,14 @@ struct EventDetailView: View {
     @ObservedObject private var lookupEvents = FirebaseCollection<LookupEvent>(collectionRef: eventsCollectionRef)
     @Environment(\.presentationMode) var presentationMode
     @State private var showingEventPresentAlert = false
-    
-    
     var eventItem: EventDetail
     let photo = String(Int.random(in: 1 ..< 4))
     
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            
+        VStack {
             Image("Event\(photo)")
                 .resizable()
-                .frame(width: 150, height: 150)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 10)
+                .aspectRatio(contentMode: .fit)
             
             Text(eventItem.name)
                 .font(.title)
@@ -40,8 +33,7 @@ struct EventDetailView: View {
             }
             .padding()
         }
-        .padding()
-        .navigationBarTitle(Text("Event Details"), displayMode: .inline)
+        .navigationBarTitle(Text("\(eventItem.name) Details"), displayMode: .inline)
         .alert(isPresented: $showingEventPresentAlert) {
             Alert(title: Text("Event Already Present"), message: Text("This event is already present in your lookup, thank you!"), dismissButton: .default(Text("OK")) {
                 self.dismiss()
