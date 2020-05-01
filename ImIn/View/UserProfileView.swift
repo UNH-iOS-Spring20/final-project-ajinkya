@@ -17,7 +17,14 @@ struct UserProfileView: View {
     var body: some View {
         NavigationView{
             Group {
-                VStack(spacing: 20) {
+                VStack(spacing: 25) {
+                    Image("Display Picture")
+                        .resizable()
+                        .frame(width: 250, height: 200)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 10)
+                    
                     HStack {
                         Text("First Name:")
                         Text(user.items[0].firstName)
@@ -49,9 +56,9 @@ struct UserProfileView: View {
                         
                     }
                 }
-                .navigationBarTitle("User Profile")
+                .navigationBarTitle("Profile")
             }
-            .padding()
+            
         }
         
     }
