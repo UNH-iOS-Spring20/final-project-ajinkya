@@ -24,7 +24,7 @@ struct ContentView: View{
                     }
                 }
             }
-            .navigationBarTitle(Text("Nearby Events"))
+            .navigationBarTitle(Text("Events"))
         }
     }
     

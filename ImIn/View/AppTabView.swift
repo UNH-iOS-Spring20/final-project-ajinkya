@@ -14,7 +14,7 @@ struct AppTabView: View {
             ContentView()
                 .tabItem {
                     Image(systemName: "list.dash").font(.title)
-                    Text("Nearby Events")
+                    Text("Events")
             }
             
             LookupEventsView()

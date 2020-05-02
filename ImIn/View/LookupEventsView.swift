@@ -26,7 +26,7 @@ struct LookupEventsView: View {
                     }.onDelete(perform: deleteEvent)
                 }
             }
-            .navigationBarTitle(Text("Lookup Events"))
+            .navigationBarTitle(Text("Going"))
             .navigationBarItems(leading: EditButton())
         }
     }
