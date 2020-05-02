@@ -13,19 +13,19 @@ struct AppTabView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    // Image(systemName: "list.dash").font(.title)
+                    Image(systemName: "list.dash").font(.title)
                     Text("Nearby Events")
             }
             
             LookupEventsView()
                 .tabItem {
-                    // Image(systemName: "cart").font(.title)
+                    Image(systemName: "car").font(.title)
                     Text("Going")
             }
             
             UserProfileView()
                 .tabItem {
-                    // Image(systemName: "cart").font(.title)
+                    Image(systemName: "person.fill").font(.title)
                     Text("Profile")
             }
             
