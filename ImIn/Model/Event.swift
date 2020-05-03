@@ -25,7 +25,7 @@ struct EventDetail: Decodable, Hashable{
   
     var name: String
     var vicinity: String
-    //var rating: Int
+    var rating: Double
     var id: String
     var icon: String
     //var opening_hours: OpeningHours

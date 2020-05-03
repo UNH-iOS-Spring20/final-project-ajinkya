@@ -18,21 +18,35 @@ struct EventDetailView: View {
     
     var body: some View {
         VStack {
+            MapView(coordinates: CLLocationCoordinate2D(latitude:self.eventItem.geometry.location.lat, longitude: self.eventItem.geometry.location.lng))
+                .frame(height: 300)
+                .edgesIgnoringSafeArea(.top)
+            
             Image("Event\(photo)")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .frame(width: 230, height: 230)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                .shadow(radius: 10)
+                .offset(y: -130)
+                .padding(.bottom, -130)
             
-            Text(eventItem.name)
-                .font(.title)
             
-            HStack(alignment: .top) {
-                Text(eventItem.vicinity)
-                    .font(.subheadline)
+            VStack(alignment: .leading ) {
+                Text(eventItem.name)
+                    .font(.title)
+                HStack {
+                    Text(eventItem.vicinity)
+                        .font(.subheadline)
+                    Spacer()
+                    Text("\(eventItem.rating)")
+                        .font(.subheadline)
+                }
             }
-            MapView(coordinates: CLLocationCoordinate2D(latitude:self.eventItem.geometry.location.lat, longitude: self.eventItem.geometry.location.lng))
-    
+            .padding()
+            
             Button(action: addEvent){
-                Text("Add Event")
+                Text("Im'IN")
             }
             .padding()
         }
@@ -77,7 +91,7 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ view: MKMapView, context: Context) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         let region = MKCoordinateRegion(center: coordinates, span: span)
         view.setRegion(region, animated: true)
     }
