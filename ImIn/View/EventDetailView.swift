@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct EventDetailView: View {
     @ObservedObject private var lookupEvents = FirebaseCollection<LookupEvent>(collectionRef: eventsCollectionRef)
@@ -28,6 +29,8 @@ struct EventDetailView: View {
                 Text(eventItem.vicinity)
                     .font(.subheadline)
             }
+            MapView(coordinates: CLLocationCoordinate2D(latitude:self.eventItem.geometry.location.lat, longitude: self.eventItem.geometry.location.lng))
+    
             Button(action: addEvent){
                 Text("Add Event")
             }
@@ -63,6 +66,20 @@ struct EventDetailView: View {
     
     func dismiss() {
         presentationMode.wrappedValue.dismiss()
+    }
+}
+
+struct MapView: UIViewRepresentable {
+    var coordinates: CLLocationCoordinate2D
+    
+    func makeUIView(context: Context) ->  MKMapView {
+        MKMapView(frame: .zero)
+    }
+    
+    func updateUIView(_ view: MKMapView, context: Context) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9)
+        let region = MKCoordinateRegion(center: coordinates, span: span)
+        view.setRegion(region, animated: true)
     }
 }
 
