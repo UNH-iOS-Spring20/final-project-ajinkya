@@ -13,16 +13,7 @@ struct EventResponse: Decodable{
     var results: [EventDetail]
 }
 
-/*struct Events: Decodable {
-    var events: [EventDetail]
-}*/
-
 struct EventDetail: Decodable, Hashable{
-//    static func == (lhs: EventDetail, rhs: EventDetail) -> Bool {
-//        <#code#>
-//    }
-    
-  
     var name: String
     var vicinity: String
     var rating: Double
