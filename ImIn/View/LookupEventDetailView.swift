@@ -7,33 +7,41 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LookupEventDetailView: View {
     var lookupEvent: LookupEvent
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+      VStack  {
+        MapView(coordinates: CLLocationCoordinate2D(latitude:self.lookupEvent.latitude, longitude: self.lookupEvent.longitude))
+                .frame(height: 300)
+                .edgesIgnoringSafeArea(.top)
             
-            Image("Event\(lookupEvent.photo)")
+        Image("Event\(lookupEvent.photo)")
                 .resizable()
-                .frame(width: 150, height: 150)
+                .frame(width: 230, height: 230)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)
+                .offset(y: -170)
+                .padding(.bottom, -130)
             
-            Text(lookupEvent.name)
-                .font(.title)
             
-            HStack(alignment: .top) {
-                Text(lookupEvent.id)
-                    .font(.subheadline)
-                Spacer()
-                Text(lookupEvent.vicinity)
-                    .font(.subheadline)
+            VStack(alignment: .leading ) {
+                Text(lookupEvent.name)
+                    .font(.title)
+                HStack {
+                    Text(lookupEvent.vicinity)
+                        .font(.subheadline)
+                    Spacer()
+                    Text("\(lookupEvent.rating)")
+                        .font(.subheadline)
+                }
             }
+            .padding()
         }
-        .padding()
         
     }
 }
