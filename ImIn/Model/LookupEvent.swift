@@ -16,6 +16,9 @@ class LookupEvent: FirebaseCodable {
     @Published var vicinity: String
     @Published var icon: String
     @Published var photo: String
+    @Published var rating: Double
+    @Published var latitude: Double
+    @Published var longitude: Double
     
     var data: [String: Any] {
         return [
@@ -28,7 +31,11 @@ class LookupEvent: FirebaseCodable {
         guard let name = data["name"] as? String,
             let vicinity = data["vicinity"] as? String,
             let icon = data["icon"] as? String,
-            let photo = data["photo"] as? String
+            let photo = data["photo"] as? String,
+            let rating = data["rating"] as? Double,
+            let latitude = data["latitude"] as? Double,
+            let longitude = data["longitude"] as? Double
+            
             else {
                 return nil
         }
@@ -38,6 +45,9 @@ class LookupEvent: FirebaseCodable {
         self.vicinity = vicinity
         self.icon = icon
         self.photo = photo
+        self.rating = rating
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
 

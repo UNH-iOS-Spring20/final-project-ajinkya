@@ -72,7 +72,8 @@ struct EventDetailView: View {
         }
         if isPresent == false {
             let data = ["name": eventItem.name, "vicinity": eventItem.vicinity, "icon": eventItem.icon,
-                        "photo": photo]
+                        "photo": photo, "rating": eventItem.rating, "latitude": eventItem.geometry.location.lat,
+                        "longitude": eventItem.geometry.location.lng] as [String : Any]
             eventsCollectionRef.addDocument(data: data)
             dismiss()
         }
