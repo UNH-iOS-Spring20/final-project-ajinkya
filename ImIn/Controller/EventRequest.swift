@@ -51,25 +51,4 @@ struct EventRequest {
         
         
     }
-    
-//    func getEvents (completion: @escaping (Result<[EventDetail], EventError>) -> Void){
-//
-//        let dataTask = URLSession.shared.dataTask(with: resourceURL) { data, _, _ in
-//            guard let jsonData = data else {
-//                completion(.failure(.noDataAvailable))
-//                return
-//            }
-//            do {
-//                let decoder = JSONDecoder()
-//                let eventsResponse = try decoder.decode(EventResponse.self, from: jsonData)
-//                let events = eventsResponse.results
-//                listOfEvents = events
-//                completion(.success(events))
-//            }catch {
-//                completion(.failure(.cannotProcessData))
-//            }
-//
-//        }
-//        dataTask.resume()
-//    }
 }

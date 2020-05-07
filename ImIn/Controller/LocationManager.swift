@@ -27,9 +27,7 @@ class LocationManager: NSObject, ObservableObject{
     print("Inside LocationManager constructor")
     let API_KEY = "AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
     
-      let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(userLatitude),\(userLongitude)&radius=1500&type=restaurant&keyword=cruise&key=\(API_KEY)"
-    
-    let resourceString1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
+    let resourceString1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=\(API_KEY)"
       
       
       guard let resourceURL = URL(string: resourceString1) else {fatalError()}
@@ -64,8 +62,6 @@ extension LocationManager: CLLocationManagerDelegate {
     let API_KEY = "AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
     
       let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(userLatitude),\(userLongitude)&radius=1500&type=restaurant&keyword=cruise&key=\(API_KEY)"
-    
-    let resourceString1 = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=AIzaSyBI1gYuspytaxVHRAsOf-XV-zMbXBUOxrU"
       
       
       guard let resourceURL = URL(string: resourceString) else {fatalError()}
