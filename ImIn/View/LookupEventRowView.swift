@@ -9,18 +9,21 @@
 import SwiftUI
 
 struct LookupEventRowView: View {
-     var lookupEvent: LookupEvent
-       
-       var body: some View {
-           Text(lookupEvent.name)
-       }
-}
+    var lookupEvent: LookupEvent
+    
+    var body: some View {
+        HStack{
+            URLImageView(urlString: lookupEvent.icon)
+            Text(lookupEvent.name)
+        }
+    }
+} 
 
 struct LookupEventRowView_Previews: PreviewProvider {
     static var previews: some View {
         LookupEventRowView(lookupEvent:
             LookupEvent(id: "1", data: ["name": "TestName",
-                                      "vicinity": "TestVicinity"])!
+                                        "vicinity": "TestVicinity"])!
         )
     }
 }
