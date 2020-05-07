@@ -14,18 +14,18 @@ struct LookupEventDetailView: View {
     
     var body: some View {
         
-      VStack  {
-        MapView(coordinates: CLLocationCoordinate2D(latitude:self.lookupEvent.latitude, longitude: self.lookupEvent.longitude))
+        VStack  {
+            MapView(coordinates: CLLocationCoordinate2D(latitude:self.lookupEvent.latitude, longitude: self.lookupEvent.longitude))
                 .frame(height: 300)
                 .edgesIgnoringSafeArea(.top)
             
-        Image("Event\(lookupEvent.photo)")
+            Image("Event\(lookupEvent.photo)")
                 .resizable()
                 .frame(width: 230, height: 230)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)
-                .offset(y: -170)
+                .offset(y: -130)
                 .padding(.bottom, -130)
             
             
@@ -42,7 +42,7 @@ struct LookupEventDetailView: View {
             }
             .padding()
         }
-        
+        .navigationBarTitle(Text("\(lookupEvent.name) Details"), displayMode: .inline)
     }
 }
 

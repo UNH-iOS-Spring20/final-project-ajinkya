@@ -16,48 +16,47 @@ struct UserProfileView: View {
     
     var body: some View {
         NavigationView{
-            Group {
-                VStack(spacing: 25) {
-                    Image("Display Picture")
-                        .resizable()
-                        .frame(width: 250, height: 200)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                        .shadow(radius: 10)
-                    
-                    HStack {
-                        Text("First Name:")
-                        Text(user.items[0].firstName)
-                    }
-                    HStack{
-                        Text("Last Name:")
-                        Text(user.items[0].lastName)
-                    }
-                    HStack{
-                        Text("Address:")
-                        Text(user.items[0].address)
-                    }
-                    HStack{
-                        Text("City:")
-                        Text(user.items[0].city)
-                    }
-                    HStack{
-                        Text("State:")
-                        Text(user.items[0].state)
-                    }
-                    HStack{
-                        Text("Country:")
-                        Text(user.items[0].country)
-                    }
-                    HStack{
-                        NavigationLink(destination: EditUserProfileView(user: user.items[0])){
-                            Text("Edit")
-                        }
-                        
-                    }
+            VStack(alignment: .leading, spacing: 25) {
+                Image("Display Picture")
+                    .resizable()
+                    .frame(width: 250, height: 200)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 10)
+                
+                HStack {
+                    Text("First Name:")
+                    Text(user.items[0].firstName)
                 }
-                .navigationBarTitle("Profile")
+                HStack{
+                    Text("Last Name:")
+                    Text(user.items[0].lastName)
+                }
+                HStack{
+                    Text("Address:")
+                    Text(user.items[0].address)
+                }
+                HStack{
+                    Text("City:")
+                    Text(user.items[0].city)
+                }
+                HStack{
+                    Text("State:")
+                    Text(user.items[0].state)
+                }
+                HStack{
+                    Text("Country:")
+                    Text(user.items[0].country)
+                }
+                
+                VStack (alignment: .center){
+                    NavigationLink(destination: EditUserProfileView(user: user.items[0])){
+                        Text("Edit")
+                    }
+                    
+                }
             }
+            .navigationBarTitle("Profile")
             
         }
         
