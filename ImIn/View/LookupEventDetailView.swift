@@ -36,7 +36,7 @@ struct LookupEventDetailView: View {
                     Text(lookupEvent.vicinity)
                         .font(.subheadline)
                     Spacer()
-                    Text("\(lookupEvent.rating)")
+                    Text(String(format: "%.1f", lookupEvent.rating))
                         .font(.subheadline)
                 }
             }

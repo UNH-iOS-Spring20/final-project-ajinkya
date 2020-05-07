@@ -39,7 +39,7 @@ struct EventDetailView: View {
                     Text(eventItem.vicinity)
                         .font(.subheadline)
                     Spacer()
-                    Text("\(eventItem.rating)")
+                    Text(String(format: "%.1f", eventItem.rating))
                         .font(.subheadline)
                 }
             }
