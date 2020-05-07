@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct EditUserProfileView: View {
-       @ObservedObject var user: User
+    @ObservedObject var user: User
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -26,6 +26,18 @@ struct EditUserProfileView: View {
                 HStack {
                     Text("Address:")
                     TextField("Enter Address", text: $user.address)
+                }
+                HStack {
+                    Text("City:")
+                    TextField("Enter City", text: $user.city)
+                }
+                HStack {
+                    Text("State:")
+                    TextField("Enter State", text: $user.state)
+                }
+                HStack {
+                    Text("Country:")
+                    TextField("Enter Country", text: $user.country)
                 }
                 Button(action: {
                     self.updateUserDetails()
