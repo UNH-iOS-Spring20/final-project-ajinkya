@@ -9,6 +9,7 @@ target 'ImIn' do
 # add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
 pod 'Firebase/Firestore'
+pod 'Firebase/Auth'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 # add pods for any other desired Firebase products

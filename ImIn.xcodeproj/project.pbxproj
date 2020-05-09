@@ -16,6 +16,8 @@
 		262A7E9424566258004375C5 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A7E9324566258004375C5 /* UserProfileView.swift */; };
 		262A7E9624566309004375C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A7E9524566309004375C5 /* User.swift */; };
 		262A7E982456827F004375C5 /* EditUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A7E972456827F004375C5 /* EditUserProfileView.swift */; };
+		262A7E9E24661221004375C5 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A7E9D24661221004375C5 /* SessionStore.swift */; };
+		262A7EA024661A9C004375C5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262A7E9F24661A9C004375C5 /* AuthView.swift */; };
 		26379982244B940500FDDFB5 /* FirebaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379981244B940500FDDFB5 /* FirebaseCollection.swift */; };
 		2637998A244CF42500FDDFB5 /* LookupEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26379989244CF42500FDDFB5 /* LookupEventsView.swift */; };
 		2637998C244D03C600FDDFB5 /* LookupEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2637998B244D03C600FDDFB5 /* LookupEvent.swift */; };
@@ -69,6 +71,8 @@
 		262A7E9324566258004375C5 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		262A7E9524566309004375C5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		262A7E972456827F004375C5 /* EditUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserProfileView.swift; sourceTree = "<group>"; };
+		262A7E9D24661221004375C5 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		262A7E9F24661A9C004375C5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		26379981244B940500FDDFB5 /* FirebaseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollection.swift; sourceTree = "<group>"; };
 		26379989244CF42500FDDFB5 /* LookupEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEventsView.swift; sourceTree = "<group>"; };
 		2637998B244D03C600FDDFB5 /* LookupEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupEvent.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			children = (
 				2674D122241D7D0B00D7A930 /* EventRequest.swift */,
 				267ACFF7241F3A7F000B0D5F /* LocationManager.swift */,
+				262A7E9D24661221004375C5 /* SessionStore.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				262A7E8F2455217A004375C5 /* AppTabView.swift */,
 				262A7E9324566258004375C5 /* UserProfileView.swift */,
 				262A7E972456827F004375C5 /* EditUserProfileView.swift */,
+				262A7E9F24661A9C004375C5 /* AuthView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262A7E9E24661221004375C5 /* SessionStore.swift in Sources */,
 				26379990244D06AF00FDDFB5 /* LookupEventRowView.swift in Sources */,
 				2674D11E241D7ABF00D7A930 /* Event.swift in Sources */,
 				26BBEEBE23FED00D00E7E86C /* NewUser.swift in Sources */,
@@ -445,6 +452,7 @@
 				26379982244B940500FDDFB5 /* FirebaseCollection.swift in Sources */,
 				26AB0A39241FE54800B17A19 /* EventRow.swift in Sources */,
 				26BBEEC423FED55800E7E86C /* LoginUser.swift in Sources */,
+				262A7EA024661A9C004375C5 /* AuthView.swift in Sources */,
 				262A7E9424566258004375C5 /* UserProfileView.swift in Sources */,
 				267ACFF8241F3A7F000B0D5F /* LocationManager.swift in Sources */,
 				2639D79B23FA07AD000D22B3 /* AppDelegate.swift in Sources */,
