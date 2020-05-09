@@ -12,10 +12,30 @@ struct EventRow: View {
     var eventItem: EventDetail
     
     var body: some View {
-        HStack{
-            URLImageView(urlString: eventItem.icon)
-            Text(eventItem.name)
-        }
+        PostView(eventItem: eventItem)
+    }
+}
+
+struct PostView: View {
+    var eventItem: EventDetail
+    let photo = String(Int.random(in: 1 ..< 6))
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack{
+                URLImageView(urlString: eventItem.icon)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(eventItem.name)
+                        .font(.headline)
+                    Text(eventItem.vicinity)
+                        .font(.subheadline)
+                }.padding(.leading, 8)
+            }.padding(.leading, 16).padding(.top, 16)
+            
+            Image("Event\(photo)")
+                .resizable()
+                .frame(width: 420, height: 320)
+        }.padding(.leading, -20).padding(.bottom, -8)
     }
 }
 
