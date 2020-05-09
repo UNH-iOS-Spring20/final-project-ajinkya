@@ -52,7 +52,7 @@ struct EventDetailView: View {
         }
         .navigationBarTitle(Text("\(eventItem.name) Details"), displayMode: .inline)
         .alert(isPresented: $showingEventPresentAlert) {
-            Alert(title: Text("Event Already Present"), message: Text("This event is already present in your lookup, thank you!"), dismissButton: .default(Text("OK")) {
+            Alert(title: Text("Place/Event Already Added"), message: Text("This event is added to your going tab, thank you!"), dismissButton: .default(Text("OK")) {
                 self.dismiss()
                 })
         }

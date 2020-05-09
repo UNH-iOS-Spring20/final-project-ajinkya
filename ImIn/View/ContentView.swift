@@ -24,7 +24,7 @@ struct ContentView: View{
                     }
                 }
             }
-            .navigationBarTitle(Text("Events"))
+            .navigationBarTitle(Text("Places"))
         }
     }
     
