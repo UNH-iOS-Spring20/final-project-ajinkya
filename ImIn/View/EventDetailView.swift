@@ -14,7 +14,7 @@ struct EventDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showingEventPresentAlert = false
     var eventItem: EventDetail
-    let photo = String(Int.random(in: 1 ..< 6))
+    let photo = String(Int.random(in: 1 ..< 11))
     
     var body: some View {
         VStack {

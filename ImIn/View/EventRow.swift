@@ -18,7 +18,7 @@ struct EventRow: View {
 
 struct PostView: View {
     var eventItem: EventDetail
-    let photo = String(Int.random(in: 1 ..< 6))
+    let photo = String(Int.random(in: 1 ..< 11))
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {

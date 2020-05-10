@@ -20,7 +20,7 @@ struct LookupEventRowView: View {
 
 struct LookupPostView: View {
     var lookupEvent: LookupEvent
-    let photo = String(Int.random(in: 1 ..< 6))
+    let photo = String(Int.random(in: 1 ..< 11))
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
