@@ -29,6 +29,7 @@ struct  SignInView: View {
         VStack{
             Text("Welcome Back!")
                 .font(.system(size: 32, weight: .heavy))
+                .foregroundColor(.primary)
             
             Text("Sign In to Continue")
                 .font(.system(size: 18, weight: .medium))
@@ -55,7 +56,7 @@ struct  SignInView: View {
                     .frame(height: 50)
                     .foregroundColor(.black)
                     .font(.system(size: 14, weight: .bold))
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(.blue), Color(.gray)]), startPoint: UnitPoint.leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(.systemGray), Color(.systemGray4)]), startPoint: UnitPoint.leading, endPoint: .trailing))
                     .cornerRadius(5)
             }
             
@@ -109,7 +110,7 @@ struct SignUpView: View {
             Text("Create Account")
                 .font(.system(size: 32, weight: .bold))
             
-            Text("Sign Up to ger started")
+            Text("Sign Up to Get Started")
                 .font(.system(size: 18, weight: .medium))
                 .foregroundColor(Color(.gray))
             
@@ -134,7 +135,7 @@ struct SignUpView: View {
                     .frame(height: 50)
                     .foregroundColor(.black)
                     .font(.system(size: 14, weight: .bold))
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(.blue), Color(.gray)]), startPoint: UnitPoint.leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(.systemGray), Color(.systemGray4)]), startPoint: UnitPoint.leading, endPoint: .trailing))
                     .cornerRadius(5)
             }
             
