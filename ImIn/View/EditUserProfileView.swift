@@ -17,26 +17,47 @@ struct EditUserProfileView: View {
             VStack(spacing: 25) {
                 HStack {
                     Text("First Name:")
+                        .foregroundColor(Color(.gray))
                     TextField("Enter First Name", text: $user.firstName)
                 }
                 HStack {
                     Text("Last Name:")
+                    .foregroundColor(Color(.gray))
                     TextField("Enter Last Name", text: $user.lastName)
                 }
+                HStack{
+                    Text("Bio:")
+                    .foregroundColor(Color(.gray))
+                    TextField("Enter Bio", text: $user.bio)
+                }
+                HStack(alignment: .center){
+                    Text("Private Information")
+                        .font(.system(size: 16, weight: .bold))
+                }
+                HStack {
+                    Text("Email address:")
+                    .foregroundColor(Color(.gray))
+                    TextField("Enter Address", text: $user.emailAddress)
+                }
+                
+                //                HStack {
+                //                    Text("Phone:")
+                //                    TextField("Enter Phone", text: $user.phone)
+                //                }
+                
                 HStack {
                     Text("Address:")
+                    .foregroundColor(Color(.gray))
                     TextField("Enter Address", text: $user.address)
                 }
                 HStack {
-                    Text("City:")
-                    TextField("Enter City", text: $user.city)
-                }
-                HStack {
                     Text("State:")
+                    .foregroundColor(Color(.gray))
                     TextField("Enter State", text: $user.state)
                 }
                 HStack {
                     Text("Country:")
+                    .foregroundColor(Color(.gray))
                     TextField("Enter Country", text: $user.country)
                 }
                 Button(action: {
@@ -47,6 +68,7 @@ struct EditUserProfileView: View {
                 Spacer()
             }
             .navigationBarTitle("Edit \(user.firstName) \(user.lastName) Profile")
+            
         }
         .padding()
     }

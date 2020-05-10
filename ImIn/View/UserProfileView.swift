@@ -16,7 +16,7 @@ struct UserProfileView: View {
     
     var body: some View {
         NavigationView{
-            VStack(alignment: .leading, spacing: 25) {
+            VStack{
                 Image("Display Picture")
                     .resizable()
                     .frame(width: 250, height: 200)
@@ -24,42 +24,27 @@ struct UserProfileView: View {
                     .overlay(Circle().stroke(Color.white, lineWidth: 4))
                     .shadow(radius: 10)
                 
-                HStack {
-                    Text("First Name:")
-                    Text(user.items[0].firstName)
-                }
-                HStack{
-                    Text("Last Name:")
-                    Text(user.items[0].lastName)
-                }
-                HStack{
-                    Text("Address:")
-                    Text(user.items[0].address)
-                }
-                HStack{
-                    Text("City:")
-                    Text(user.items[0].city)
-                }
-                HStack{
-                    Text("State:")
-                    Text(user.items[0].state)
-                }
-                HStack{
-                    Text("Country:")
-                    Text(user.items[0].country)
-                }
+                VStack(alignment: .leading, spacing: 25) {
+                    HStack {
+                        Text("Name:")
+                        Text(user.items[0].firstName)
+                        Text(user.items[0].lastName)
+                    }
+                    HStack {
+                        Text("Bio:")
+                        Text(user.items[0].bio)
+                    }
+                    
+                }.padding()
                 
                 VStack (alignment: .center){
                     NavigationLink(destination: EditUserProfileView(user: user.items[0])){
-                        Text("Edit")
+                        Text("Edit Profile")
                     }
-                    
                 }
+                .navigationBarTitle("Profile")
             }
-            .navigationBarTitle("Profile")
-            
         }
-        
     }
 }
 
